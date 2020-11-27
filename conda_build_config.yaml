@@ -144,6 +144,10 @@ BUILD: armv7-conda_cos7-linux-gnueabihf   # [armv7l]
 
 # TODO: remove these when run_exports are added to the packages.
 pin_run_as_build:
+  poco:
+    max_pin: x.x.x
+  log4cxx:
+    max_pin: x.x.x
   arpack:
     max_pin: x.x.x
   boost:
@@ -565,8 +569,8 @@ poppler:
 proj:
   - 7.0.0
 python:
+  - 2.7.* *_cpython
   - 3.6.* *_cpython
-  # - 3.7.* *_cpython
 python_impl:
   - cpython
 qt:

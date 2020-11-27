@@ -42,10 +42,10 @@ packages_select_by_deps:
 
   # - moveit
 
-  - class_loader
+  # - class_loader
 
   # - niryo_one_simulation
-  - libfranka
+  # - libfranka
   # - franka_ros # doesn't work on osx
 
   # - cv_bridge
