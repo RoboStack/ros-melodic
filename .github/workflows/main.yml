@@ -11,6 +11,7 @@ jobs:
         python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
     - name: Install vinca
       run: |
+        echo "Installing vinca!"
         pip install git+https://github.com/RoboStack/vinca.git@master
 
     - name: Generate recipes
