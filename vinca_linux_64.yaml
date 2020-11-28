@@ -14,23 +14,25 @@ packages_skip_by_deps:
   # - rosbridge_suite
   # - tf2_web_republisher
 
+patch_dir: patch
+
 packages_remove_from_deps:
   - stage-ros
   - stage
 
 skip_existing:
-  - https://conda.anaconda.org/robostack/
+  # - https://conda.anaconda.org/robostack/
 
 packages_select_by_deps:
   # - catkin
-  - message_runtime
+  # - message_runtime
   # - roscpp
   # - ros_core
   # - ros_base
   # - rviz_visual_tools
   # - rviz
   # - tf2
-  # - desktop
+  - desktop
 
   # - rviz
 
@@ -89,5 +91,3 @@ packages_select_by_deps:
   # - joy
   # - ros_control
   # - ros_controllers
-
-patch_dir: patch
