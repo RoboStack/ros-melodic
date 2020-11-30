@@ -1,0 +1,9 @@
+pool:
+  name: Default
+  demands:
+  - Agent.OS -equals linux
+  - Agent.OSArchitecture -equals ARM64
+trigger:
+- buildbranch_linux_aarch64
+pr: none
+stages: []
