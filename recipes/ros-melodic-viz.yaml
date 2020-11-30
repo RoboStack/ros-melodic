@@ -1,0 +1,39 @@
+package:
+  name: ros-melodic-viz
+  version: 1.4.1
+source:
+  git_url: https://github.com/ros-gbp/metapackages-release.git
+  git_rev: release/melodic/viz/1.4.1-0
+  folder: ros-melodic-viz/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+  run:
+    - python
+    - ros-melodic-ros-base
+    - ros-melodic-rqt-common-plugins
+    - ros-melodic-rqt-robot-plugins
+    - ros-melodic-rviz

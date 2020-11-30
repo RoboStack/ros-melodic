@@ -1,0 +1,2660 @@
+pool:
+  vmImage: ubuntu-16.04
+trigger:
+- buildbranch_linux
+pr: none
+stages:
+- stage: stage_0
+  jobs:
+  - job: ros_melodic_catkin
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-catkin
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-catkin
+- stage: stage_1
+  jobs:
+  - job: ros_melodic_genmsg
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genmsg
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-genmsg
+  - job: ros_melodic_cpp_common
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-cpp-common
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-cpp-common
+  - job: ros_melodic_cmake_modules
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-cmake-modules
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-cmake-modules
+  - job: ros_melodic_rosmake
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosmake
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosmake
+  - job: ros_melodic_ros_environment
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-ros-environment
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-ros-environment
+  - job: ros_melodic_rosclean
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosclean
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosclean
+  - job: ros_melodic_rosgraph
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosgraph
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosgraph
+  - job: ros_melodic_smclib
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-smclib
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-smclib
+  - job: ros_melodic_rosbag_migration_rule
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosbag-migration-rule
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosbag-migration-rule
+  - job: ros_melodic_smach
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-smach
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-smach
+  - job: ros_melodic_orocos_kdl
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-orocos-kdl
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-orocos-kdl
+  - job: ros_melodic_urdf_parser_plugin
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-urdf-parser-plugin
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-urdf-parser-plugin
+  - job: ros_melodic_rosboost_cfg
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosboost-cfg
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosboost-cfg
+  - job: ros_melodic_roslint
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roslint
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roslint
+  - job: ros_melodic_media_export
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-media-export
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-media-export
+  - job: ros_melodic_qwt_dependency
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-qwt-dependency
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-qwt-dependency
+  - job: ros_melodic_webkit_dependency
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-webkit-dependency
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-webkit-dependency
+  - job: ros_melodic_gl_dependency
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-gl-dependency
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-gl-dependency
+- stage: stage_2
+  jobs:
+  - job: ros_melodic_gencpp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-gencpp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-gencpp
+  - job: ros_melodic_geneus
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-geneus
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-geneus
+  - job: ros_melodic_genlisp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genlisp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-genlisp
+  - job: ros_melodic_gennodejs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-gennodejs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-gennodejs
+  - job: ros_melodic_genpy
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genpy
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-genpy
+  - job: ros_melodic_rostime
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rostime
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rostime
+  - job: ros_melodic_class_loader
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-class-loader
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-class-loader
+  - job: ros_melodic_rospack
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rospack
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rospack
+  - job: ros_melodic_rosmaster
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosmaster
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosmaster
+  - job: ros_melodic_roslang
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roslang
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roslang
+  - job: ros_melodic_rosparam
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosparam
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosparam
+  - job: ros_melodic_python_orocos_kdl
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-python-orocos-kdl
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-python-orocos-kdl
+- stage: stage_3
+  jobs:
+  - job: ros_melodic_message_generation
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-message-generation
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-message-generation
+  - job: ros_melodic_roscpp_traits
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-traits
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roscpp-traits
+  - job: ros_melodic_roslib
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roslib
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roslib
+  - job: ros_melodic_xmlrpcpp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-xmlrpcpp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-xmlrpcpp
+  - job: ros_melodic_rosbash
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosbash
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosbash
+- stage: stage_4
+  jobs:
+  - job: ros_melodic_roscpp_serialization
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-serialization
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roscpp-serialization
+  - job: ros_melodic_rosunit
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosunit
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosunit
+  - job: ros_melodic_roscreate
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscreate
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roscreate
+- stage: stage_5
+  jobs:
+  - job: ros_melodic_message_runtime
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-message-runtime
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-message-runtime
+  - job: ros_melodic_roslz4
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roslz4
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roslz4
+  - job: ros_melodic_angles
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-angles
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-angles
+  - job: ros_melodic_roscpp_core
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-core
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roscpp-core
+- stage: stage_6
+  jobs:
+  - job: ros_melodic_std_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-std-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-std-msgs
+  - job: ros_melodic_rosbuild
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosbuild
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosbuild
+  - job: ros_melodic_std_srvs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-std-srvs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-std-srvs
+- stage: stage_7
+  jobs:
+  - job: ros_melodic_actionlib_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-actionlib-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-actionlib-msgs
+  - job: ros_melodic_rosconsole
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosconsole
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosconsole
+  - job: ros_melodic_rosgraph_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosgraph-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosgraph-msgs
+  - job: ros_melodic_bond
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-bond
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-bond
+  - job: ros_melodic_geometry_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-geometry-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-geometry-msgs
+  - job: ros_melodic_diagnostic_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-diagnostic-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-diagnostic-msgs
+  - job: ros_melodic_smach_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-smach-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-smach-msgs
+  - job: ros_melodic_mk
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-mk
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-mk
+  - job: ros_melodic_python_qt_binding
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-python-qt-binding
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-python-qt-binding
+- stage: stage_8
+  jobs:
+  - job: ros_melodic_pluginlib
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-pluginlib
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-pluginlib
+  - job: ros_melodic_roscpp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roscpp
+  - job: ros_melodic_tf2_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf2-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf2-msgs
+  - job: ros_melodic_trajectory_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-trajectory-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-trajectory-msgs
+  - job: ros_melodic_eigen_conversions
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-eigen-conversions
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-eigen-conversions
+  - job: ros_melodic_kdl_conversions
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-kdl-conversions
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-kdl-conversions
+  - job: ros_melodic_rosconsole_bridge
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosconsole-bridge
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosconsole-bridge
+  - job: ros_melodic_nav_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-nav-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-nav-msgs
+  - job: ros_melodic_shape_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-shape-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-shape-msgs
+  - job: ros_melodic_visualization_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-visualization-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-visualization-msgs
+  - job: ros_melodic_ros
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-ros
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-ros
+  - job: ros_melodic_roslisp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roslisp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roslisp
+  - job: ros_melodic_resource_retriever
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-resource-retriever
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-resource-retriever
+  - job: ros_melodic_qt_gui
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-qt-gui
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-qt-gui
+  - job: ros_melodic_qt_gui_py_common
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-qt-gui-py-common
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-qt-gui-py-common
+  - job: ros_melodic_qt_dotgraph
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-qt-dotgraph
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-qt-dotgraph
+- stage: stage_9
+  jobs:
+  - job: ros_melodic_rosout
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosout
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosout
+  - job: ros_melodic_rospy
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rospy
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rospy
+  - job: ros_melodic_bondcpp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-bondcpp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-bondcpp
+  - job: ros_melodic_pluginlib_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-pluginlib-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-pluginlib-tutorials
+  - job: ros_melodic_turtlesim
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-turtlesim
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-turtlesim
+  - job: ros_melodic_tf2
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf2
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf2
+  - job: ros_melodic_control_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-control-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-control-msgs
+  - job: ros_melodic_roscpp_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roscpp-tutorials
+  - job: ros_melodic_visualization_marker_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-visualization-marker-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-visualization-marker-tutorials
+  - job: ros_melodic_qt_gui_cpp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-qt-gui-cpp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-qt-gui-cpp
+- stage: stage_10
+  jobs:
+  - job: ros_melodic_roslaunch
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roslaunch
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roslaunch
+  - job: ros_melodic_nodelet
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-nodelet
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-nodelet
+  - job: ros_melodic_tf2_py
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf2-py
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf2-py
+  - job: ros_melodic_bondpy
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-bondpy
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-bondpy
+  - job: ros_melodic_urdfdom_py
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-urdfdom-py
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-urdfdom-py
+  - job: ros_melodic_rqt_gui
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-gui
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-gui
+- stage: stage_11
+  jobs:
+  - job: ros_melodic_rostest
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rostest
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rostest
+  - job: ros_melodic_nodelet_tutorial_math
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-nodelet-tutorial-math
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-nodelet-tutorial-math
+  - job: ros_melodic_bond_core
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-bond-core
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-bond-core
+  - job: ros_melodic_rqt_gui_py
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-gui-py
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-gui-py
+  - job: ros_melodic_rqt_gui_cpp
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-gui-cpp
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-gui-cpp
+- stage: stage_12
+  jobs:
+  - job: ros_melodic_rosbag_storage
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosbag-storage
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosbag-storage
+  - job: ros_melodic_topic_tools
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-topic-tools
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-topic-tools
+  - job: ros_melodic_message_filters
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-message-filters
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-message-filters
+  - job: ros_melodic_diagnostic_aggregator
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-diagnostic-aggregator
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-diagnostic-aggregator
+  - job: ros_melodic_diagnostic_updater
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-diagnostic-updater
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-diagnostic-updater
+  - job: ros_melodic_filters
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-filters
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-filters
+  - job: ros_melodic_urdf
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-urdf
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-urdf
+  - job: ros_melodic_xacro
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-xacro
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-xacro
+  - job: ros_melodic_rospy_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rospy-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rospy-tutorials
+  - job: ros_melodic_rqt_py_console
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-py-console
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-py-console
+  - job: ros_melodic_rqt_shell
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-shell
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-shell
+  - job: ros_melodic_rqt_top
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-top
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-top
+  - job: ros_melodic_rqt_web
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-web
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-web
+  - job: ros_melodic_rqt_runtime_monitor
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-runtime-monitor
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-runtime-monitor
+- stage: stage_13
+  jobs:
+  - job: ros_melodic_rosbag
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosbag
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosbag
+  - job: ros_melodic_self_test
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-self-test
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-self-test
+  - job: ros_melodic_kdl_parser_py
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-kdl-parser-py
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-kdl-parser-py
+  - job: ros_melodic_kdl_parser
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-kdl-parser
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-kdl-parser
+  - job: ros_melodic_ros_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-ros-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-ros-tutorials
+- stage: stage_14
+  jobs:
+  - job: ros_melodic_rostopic
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rostopic
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rostopic
+  - job: ros_melodic_rosmsg
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosmsg
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosmsg
+  - job: ros_melodic_sensor_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-sensor-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-sensor-msgs
+  - job: ros_melodic_diagnostic_analysis
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-diagnostic-analysis
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-diagnostic-analysis
+- stage: stage_15
+  jobs:
+  - job: ros_melodic_rosnode
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosnode
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosnode
+  - job: ros_melodic_rosservice
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rosservice
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rosservice
+  - job: ros_melodic_joint_state_publisher
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-joint-state-publisher
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-joint-state-publisher
+  - job: ros_melodic_stereo_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-stereo-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-stereo-msgs
+  - job: ros_melodic_image_transport
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-image-transport
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-image-transport
+  - job: ros_melodic_map_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-map-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-map-msgs
+  - job: ros_melodic_cv_bridge
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-cv-bridge
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-cv-bridge
+  - job: ros_melodic_rqt_topic
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-topic
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-topic
+  - job: ros_melodic_rqt_robot_steering
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-robot-steering
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-robot-steering
+- stage: stage_16
+  jobs:
+  - job: ros_melodic_actionlib
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-actionlib
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-actionlib
+  - job: ros_melodic_roswtf
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roswtf
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-roswtf
+  - job: ros_melodic_dynamic_reconfigure
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-dynamic-reconfigure
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-dynamic-reconfigure
+  - job: ros_melodic_common_msgs
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-common-msgs
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-common-msgs
+  - job: ros_melodic_rqt_logger_level
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-logger-level
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-logger-level
+  - job: ros_melodic_rqt_bag
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-bag
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-bag
+  - job: ros_melodic_rqt_graph
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-graph
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-graph
+  - job: ros_melodic_rqt_image_view
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-image-view
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-image-view
+- stage: stage_17
+  jobs:
+  - job: ros_melodic_actionlib_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-actionlib-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-actionlib-tutorials
+  - job: ros_melodic_turtle_actionlib
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-turtle-actionlib
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-turtle-actionlib
+  - job: ros_melodic_tf2_ros
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf2-ros
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf2-ros
+  - job: ros_melodic_smach_ros
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-smach-ros
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-smach-ros
+  - job: ros_melodic_nodelet_topic_tools
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-nodelet-topic-tools
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-nodelet-topic-tools
+  - job: ros_melodic_ros_comm
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-ros-comm
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-ros-comm
+  - job: ros_melodic_rqt_py_common
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-py-common
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-py-common
+  - job: ros_melodic_rqt_dep
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-dep
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-dep
+- stage: stage_18
+  jobs:
+  - job: ros_melodic_common_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-common-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-common-tutorials
+  - job: ros_melodic_tf
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf
+  - job: ros_melodic_turtle_tf2
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-turtle-tf2
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-turtle-tf2
+  - job: ros_melodic_executive_smach
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-executive-smach
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-executive-smach
+  - job: ros_melodic_tf2_kdl
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf2-kdl
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf2-kdl
+  - job: ros_melodic_nodelet_core
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-nodelet-core
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-nodelet-core
+  - job: ros_melodic_ros_core
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-ros-core
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-ros-core
+  - job: ros_melodic_rqt_console
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-console
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-console
+  - job: ros_melodic_rqt_plot
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-plot
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-plot
+  - job: ros_melodic_rqt_publisher
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-publisher
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-publisher
+  - job: ros_melodic_rqt_service_caller
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-service-caller
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-service-caller
+  - job: ros_melodic_rqt_moveit
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-moveit
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-moveit
+  - job: ros_melodic_rqt_robot_monitor
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-robot-monitor
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-robot-monitor
+  - job: ros_melodic_rqt_tf_tree
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-tf-tree
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-tf-tree
+- stage: stage_19
+  jobs:
+  - job: ros_melodic_turtle_tf
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-turtle-tf
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-turtle-tf
+  - job: ros_melodic_diagnostic_common_diagnostics
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-diagnostic-common-diagnostics
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-diagnostic-common-diagnostics
+  - job: ros_melodic_tf_conversions
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-tf-conversions
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-tf-conversions
+  - job: ros_melodic_robot_state_publisher
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-robot-state-publisher
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-robot-state-publisher
+  - job: ros_melodic_ros_base
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-ros-base
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-ros-base
+  - job: ros_melodic_interactive_markers
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-interactive-markers
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-interactive-markers
+  - job: ros_melodic_laser_geometry
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-laser-geometry
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-laser-geometry
+  - job: ros_melodic_rqt_msg
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-msg
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-msg
+  - job: ros_melodic_rqt_bag_plugins
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-bag-plugins
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-bag-plugins
+  - job: ros_melodic_rqt_launch
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-launch
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-launch
+  - job: ros_melodic_rqt_reconfigure
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-reconfigure
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-reconfigure
+  - job: ros_melodic_rqt_pose_view
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-pose-view
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-pose-view
+  - job: ros_melodic_rqt_nav_view
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-nav-view
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-nav-view
+- stage: stage_20
+  jobs:
+  - job: ros_melodic_geometry_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-geometry-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-geometry-tutorials
+  - job: ros_melodic_diagnostics
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-diagnostics
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-diagnostics
+  - job: ros_melodic_geometry
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-geometry
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-geometry
+  - job: ros_melodic_rviz
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rviz
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rviz
+  - job: ros_melodic_interactive_marker_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-interactive-marker-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-interactive-marker-tutorials
+  - job: ros_melodic_rqt_action
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-action
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-action
+  - job: ros_melodic_rqt_srv
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-srv
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-srv
+  - job: ros_melodic_rqt_robot_dashboard
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-robot-dashboard
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-robot-dashboard
+- stage: stage_21
+  jobs:
+  - job: ros_melodic_robot
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-robot
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-robot
+  - job: ros_melodic_urdf_tutorial
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-urdf-tutorial
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-urdf-tutorial
+  - job: ros_melodic_librviz_tutorial
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-librviz-tutorial
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-librviz-tutorial
+  - job: ros_melodic_rviz_plugin_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rviz-plugin-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rviz-plugin-tutorials
+  - job: ros_melodic_rviz_python_tutorial
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rviz-python-tutorial
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rviz-python-tutorial
+  - job: ros_melodic_rqt_common_plugins
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-common-plugins
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-common-plugins
+  - job: ros_melodic_rqt_rviz
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-rviz
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-rviz
+- stage: stage_22
+  jobs:
+  - job: ros_melodic_visualization_tutorials
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-visualization-tutorials
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-visualization-tutorials
+  - job: ros_melodic_rqt_robot_plugins
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rqt-robot-plugins
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-rqt-robot-plugins
+- stage: stage_23
+  jobs:
+  - job: ros_melodic_viz
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-viz
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-viz
+- stage: stage_24
+  jobs:
+  - job: ros_melodic_desktop
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_docker_build.sh'
+      env:
+        ANACONDA_API_TOKEN: $(ANACONDA_API_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-desktop
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      displayName: Build ros-melodic-desktop

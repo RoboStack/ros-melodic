@@ -1,0 +1,45 @@
+package:
+  name: ros-melodic-geometry
+  version: 1.12.1
+source:
+  git_url: https://github.com/ros-gbp/geometry-release.git
+  git_rev: release/melodic/geometry/1.12.1-1
+  folder: ros-melodic-geometry/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-angles
+    - ros-melodic-catkin
+    - ros-melodic-eigen-conversions
+    - ros-melodic-kdl-conversions
+    - ros-melodic-tf
+    - ros-melodic-tf-conversions
+  run:
+    - python
+    - ros-melodic-angles
+    - ros-melodic-eigen-conversions
+    - ros-melodic-kdl-conversions
+    - ros-melodic-tf
+    - ros-melodic-tf-conversions

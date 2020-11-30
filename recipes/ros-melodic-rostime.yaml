@@ -1,0 +1,41 @@
+package:
+  name: ros-melodic-rostime
+  version: 0.6.14
+source:
+  git_url: https://github.com/ros-gbp/roscpp_core-release.git
+  git_rev: release/melodic/rostime/0.6.14-1
+  folder: ros-melodic-rostime/src/work
+  patches:
+    - patch/ros-melodic-rostime.patch
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-cpp-common
+  run:
+    - boost
+    - python
+    - ros-melodic-cpp-common

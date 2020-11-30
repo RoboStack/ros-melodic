@@ -1,0 +1,47 @@
+package:
+  name: ros-melodic-nodelet-topic-tools
+  version: 1.9.16
+source:
+  git_url: https://github.com/ros-gbp/nodelet_core-release.git
+  git_rev: release/melodic/nodelet_topic_tools/1.9.16-0
+  folder: ros-melodic-nodelet-topic-tools/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-dynamic-reconfigure
+    - ros-melodic-message-filters
+    - ros-melodic-nodelet
+    - ros-melodic-pluginlib
+    - ros-melodic-roscpp
+  run:
+    - boost
+    - python
+    - ros-melodic-dynamic-reconfigure
+    - ros-melodic-message-filters
+    - ros-melodic-nodelet
+    - ros-melodic-pluginlib
+    - ros-melodic-roscpp

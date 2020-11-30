@@ -1,0 +1,39 @@
+package:
+  name: ros-melodic-roscpp-traits
+  version: 0.6.14
+source:
+  git_url: https://github.com/ros-gbp/roscpp_core-release.git
+  git_rev: release/melodic/roscpp_traits/0.6.14-1
+  folder: ros-melodic-roscpp-traits/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-cpp-common
+    - ros-melodic-rostime
+  run:
+    - python
+    - ros-melodic-cpp-common
+    - ros-melodic-rostime

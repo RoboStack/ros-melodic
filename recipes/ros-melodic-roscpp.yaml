@@ -1,0 +1,56 @@
+package:
+  name: ros-melodic-roscpp
+  version: 1.14.10
+source:
+  git_url: https://github.com/ros-gbp/ros_comm-release.git
+  git_rev: release/melodic/roscpp/1.14.10-1
+  folder: ros-melodic-roscpp/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - pkg-config
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-cpp-common
+    - ros-melodic-message-generation
+    - ros-melodic-message-runtime
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-roscpp-traits
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-roslang
+    - ros-melodic-rostime
+    - ros-melodic-std-msgs
+    - ros-melodic-xmlrpcpp
+  run:
+    - python
+    - ros-melodic-cpp-common
+    - ros-melodic-message-runtime
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-roscpp-traits
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-rostime
+    - ros-melodic-std-msgs
+    - ros-melodic-xmlrpcpp

@@ -1,0 +1,59 @@
+package:
+  name: ros-melodic-ros-core
+  version: 1.4.1
+source:
+  git_url: https://github.com/ros-gbp/metapackages-release.git
+  git_rev: release/melodic/ros_core/1.4.1-0
+  folder: ros-melodic-ros-core/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+  run:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-class-loader
+    - ros-melodic-cmake-modules
+    - ros-melodic-common-msgs
+    - ros-melodic-gencpp
+    - ros-melodic-geneus
+    - ros-melodic-genlisp
+    - ros-melodic-genmsg
+    - ros-melodic-gennodejs
+    - ros-melodic-genpy
+    - ros-melodic-message-generation
+    - ros-melodic-message-runtime
+    - ros-melodic-pluginlib
+    - ros-melodic-ros
+    - ros-melodic-ros-comm
+    - ros-melodic-rosbag-migration-rule
+    - ros-melodic-rosconsole
+    - ros-melodic-rosconsole-bridge
+    - ros-melodic-roscpp-core
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-roslisp
+    - ros-melodic-rospack
+    - ros-melodic-std-msgs
+    - ros-melodic-std-srvs

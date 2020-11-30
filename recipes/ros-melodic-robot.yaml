@@ -1,0 +1,48 @@
+package:
+  name: ros-melodic-robot
+  version: 1.4.1
+source:
+  git_url: https://github.com/ros-gbp/metapackages-release.git
+  git_rev: release/melodic/robot/1.4.1-0
+  folder: ros-melodic-robot/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+  run:
+    - python
+    - ros-melodic-control-msgs
+    - ros-melodic-diagnostics
+    - ros-melodic-executive-smach
+    - ros-melodic-filters
+    - ros-melodic-geometry
+    - ros-melodic-joint-state-publisher
+    - ros-melodic-kdl-parser
+    - ros-melodic-kdl-parser-py
+    - ros-melodic-robot-state-publisher
+    - ros-melodic-ros-base
+    - ros-melodic-urdf
+    - ros-melodic-urdf-parser-plugin
+    - ros-melodic-xacro

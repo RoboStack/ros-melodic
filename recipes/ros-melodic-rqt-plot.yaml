@@ -1,0 +1,59 @@
+package:
+  name: ros-melodic-rqt-plot
+  version: 0.4.9
+source:
+  git_url: https://github.com/ros-gbp/rqt_plot-release.git
+  git_rev: release/melodic/rqt_plot/0.4.9-0
+  folder: ros-melodic-rqt-plot/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - matplotlib-base
+    - numpy
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-gui-py-common
+    - ros-melodic-qwt-dependency
+    - ros-melodic-rosgraph
+    - ros-melodic-rostopic
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-rqt-py-common
+    - ros-melodic-std-msgs
+    - rospkg
+  run:
+    - matplotlib-base
+    - numpy
+    - python
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-gui-py-common
+    - ros-melodic-qwt-dependency
+    - ros-melodic-rosgraph
+    - ros-melodic-rostopic
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-rqt-py-common
+    - ros-melodic-std-msgs
+    - rospkg

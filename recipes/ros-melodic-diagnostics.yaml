@@ -1,0 +1,45 @@
+package:
+  name: ros-melodic-diagnostics
+  version: 1.9.7
+source:
+  git_url: https://github.com/ros-gbp/diagnostics-release.git
+  git_rev: release/melodic/diagnostics/1.9.7-1
+  folder: ros-melodic-diagnostics/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-diagnostic-aggregator
+    - ros-melodic-diagnostic-analysis
+    - ros-melodic-diagnostic-common-diagnostics
+    - ros-melodic-diagnostic-updater
+    - ros-melodic-self-test
+  run:
+    - python
+    - ros-melodic-diagnostic-aggregator
+    - ros-melodic-diagnostic-analysis
+    - ros-melodic-diagnostic-common-diagnostics
+    - ros-melodic-diagnostic-updater
+    - ros-melodic-self-test

@@ -1,0 +1,41 @@
+package:
+  name: ros-melodic-rqt-topic
+  version: 0.4.11
+source:
+  git_url: https://github.com/ros-gbp/rqt_topic-release.git
+  git_rev: release/melodic/rqt_topic/0.4.11-1
+  folder: ros-melodic-rqt-topic/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+  run:
+    - python
+    - ros-melodic-python-qt-binding
+    - ros-melodic-rostopic
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-std-msgs
+    - rospkg

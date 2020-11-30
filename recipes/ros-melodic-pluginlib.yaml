@@ -1,0 +1,48 @@
+package:
+  name: ros-melodic-pluginlib
+  version: 1.12.1
+source:
+  git_url: https://github.com/ros-gbp/pluginlib-release.git
+  git_rev: release/melodic/pluginlib/1.12.1-0
+  folder: ros-melodic-pluginlib/src/work
+  patches:
+    - patch/ros-melodic-pluginlib.patch
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-class-loader
+    - ros-melodic-cmake-modules
+    - ros-melodic-rosconsole
+    - ros-melodic-roslib
+    - tinyxml2
+  run:
+    - boost
+    - python
+    - ros-melodic-class-loader
+    - ros-melodic-rosconsole
+    - ros-melodic-roslib
+    - tinyxml2

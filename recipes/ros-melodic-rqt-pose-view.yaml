@@ -1,0 +1,57 @@
+package:
+  name: ros-melodic-rqt-pose-view
+  version: 0.5.8
+source:
+  git_url: https://github.com/ros-gbp/rqt_pose_view-release.git
+  git_rev: release/melodic/rqt_pose_view/0.5.8-0
+  folder: ros-melodic-rqt-pose-view/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - pyopengl
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-geometry-msgs
+    - ros-melodic-gl-dependency
+    - ros-melodic-python-qt-binding
+    - ros-melodic-rospy
+    - ros-melodic-rostopic
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-rqt-py-common
+    - ros-melodic-tf
+    - rospkg
+  run:
+    - pyopengl
+    - python
+    - ros-melodic-geometry-msgs
+    - ros-melodic-gl-dependency
+    - ros-melodic-python-qt-binding
+    - ros-melodic-rospy
+    - ros-melodic-rostopic
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-rqt-py-common
+    - ros-melodic-tf
+    - rospkg

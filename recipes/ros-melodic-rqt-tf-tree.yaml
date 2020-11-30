@@ -1,0 +1,58 @@
+package:
+  name: ros-melodic-rqt-tf-tree
+  version: 0.6.0
+source:
+  git_url: https://github.com/ros-gbp/rqt_tf_tree-release.git
+  git_rev: release/melodic/rqt_tf_tree/0.6.0-0
+  folder: ros-melodic-rqt-tf-tree/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - mock
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-geometry-msgs
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-dotgraph
+    - ros-melodic-rospy
+    - ros-melodic-rqt-graph
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-tf2
+    - ros-melodic-tf2-msgs
+    - ros-melodic-tf2-ros
+    - rospkg
+  run:
+    - python
+    - ros-melodic-geometry-msgs
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-dotgraph
+    - ros-melodic-rospy
+    - ros-melodic-rqt-graph
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-tf2
+    - ros-melodic-tf2-msgs
+    - ros-melodic-tf2-ros
+    - rospkg

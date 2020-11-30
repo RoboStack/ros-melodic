@@ -1,0 +1,47 @@
+package:
+  name: ros-melodic-roslisp
+  version: 1.9.24
+source:
+  git_url: https://github.com/ros-gbp/roslisp-release.git
+  git_rev: release/melodic/roslisp/1.9.24-1
+  folder: ros-melodic-roslisp/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-ros-environment
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-roslang
+    - ros-melodic-rospack
+    - ros-melodic-std-srvs
+    - sbcl
+  run:
+    - python
+    - ros-melodic-ros-environment
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-roslang
+    - ros-melodic-rospack
+    - ros-melodic-std-srvs
+    - sbcl

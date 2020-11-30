@@ -1,0 +1,36 @@
+package:
+  name: ros-melodic-angles
+  version: 1.9.12
+source:
+  git_url: https://github.com/ros-gbp/geometry_angles_utils-release.git
+  git_rev: release/melodic/angles/1.9.12-1
+  folder: ros-melodic-angles/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-rosunit
+  run:
+    - python

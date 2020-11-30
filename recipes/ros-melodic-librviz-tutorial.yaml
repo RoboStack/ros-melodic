@@ -1,0 +1,53 @@
+package:
+  name: ros-melodic-librviz-tutorial
+  version: 0.10.5
+source:
+  git_url: https://github.com/ros-gbp/visualization_tutorials-release.git
+  git_rev: release/melodic/librviz_tutorial/0.10.5-1
+  folder: ros-melodic-librviz-tutorial/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+    - sel(unix): "{{ cdt('mesa-libgl-devel') }}"
+    - sel(unix): "{{ cdt('mesa-dri-drivers') }}"
+    - sel(linux): "{{ cdt('libselinux') }}"
+    - sel(linux): "{{ cdt('libxdamage') }}"
+    - sel(linux): "{{ cdt('libxxf86vm') }}"
+    - sel(linux): "{{ cdt('libxfixes') }}"
+    - sel(linux): "{{ cdt('libxext') }}"
+    - sel(linux): "{{ cdt('libxau') }}"
+  host:
+    - python
+    - qt 5.12.5 hd8c4c69_1
+    - ros-melodic-catkin
+    - ros-melodic-roscpp
+    - ros-melodic-rviz
+    - sel(unix): xorg-libx11
+    - sel(unix): xorg-libxext
+  run:
+    - python
+    - qt
+    - ros-melodic-roscpp
+    - ros-melodic-rviz
+    - sel(unix): xorg-libx11
+    - sel(unix): xorg-libxext

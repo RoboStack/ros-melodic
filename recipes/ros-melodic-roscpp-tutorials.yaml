@@ -1,0 +1,50 @@
+package:
+  name: ros-melodic-roscpp-tutorials
+  version: 0.9.3
+source:
+  git_url: https://github.com/ros-gbp/ros_tutorials-release.git
+  git_rev: release/melodic/roscpp_tutorials/0.9.3-1
+  folder: ros-melodic-roscpp-tutorials/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost-cpp
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-message-generation
+    - ros-melodic-message-runtime
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-rostime
+    - ros-melodic-std-msgs
+  run:
+    - boost-cpp
+    - python
+    - ros-melodic-message-runtime
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-rostime
+    - ros-melodic-std-msgs

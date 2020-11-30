@@ -1,0 +1,38 @@
+package:
+  name: ros-melodic-qt-gui-py-common
+  version: 0.4.2
+source:
+  git_url: https://github.com/ros-gbp/qt_gui_core-release.git
+  git_rev: release/melodic/qt_gui_py_common/0.4.2-1
+  folder: ros-melodic-qt-gui-py-common/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - setuptools
+  run:
+    - python
+    - ros-melodic-python-qt-binding
+    - rospkg

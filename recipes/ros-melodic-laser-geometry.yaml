@@ -1,0 +1,51 @@
+package:
+  name: ros-melodic-laser-geometry
+  version: 1.6.5
+source:
+  git_url: https://github.com/ros-gbp/laser_geometry-release.git
+  git_rev: release/melodic/laser_geometry/1.6.5-1
+  folder: ros-melodic-laser-geometry/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost
+    - eigen
+    - python
+    - ros-melodic-angles
+    - ros-melodic-catkin
+    - ros-melodic-roscpp
+    - ros-melodic-rosunit
+    - ros-melodic-sensor-msgs
+    - ros-melodic-tf
+    - ros-melodic-tf2
+  run:
+    - boost
+    - eigen
+    - numpy
+    - python
+    - ros-melodic-angles
+    - ros-melodic-roscpp
+    - ros-melodic-sensor-msgs
+    - ros-melodic-tf
+    - ros-melodic-tf2

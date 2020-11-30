@@ -1,0 +1,43 @@
+package:
+  name: ros-melodic-eigen-conversions
+  version: 1.12.1
+source:
+  git_url: https://github.com/ros-gbp/geometry-release.git
+  git_rev: release/melodic/eigen_conversions/1.12.1-1
+  folder: ros-melodic-eigen-conversions/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - eigen
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-geometry-msgs
+    - ros-melodic-orocos-kdl
+    - ros-melodic-std-msgs
+  run:
+    - eigen
+    - python
+    - ros-melodic-geometry-msgs
+    - ros-melodic-orocos-kdl
+    - ros-melodic-std-msgs

@@ -1,0 +1,59 @@
+package:
+  name: ros-melodic-rosbag-storage
+  version: 1.14.10
+source:
+  git_url: https://github.com/ros-gbp/ros_comm-release.git
+  git_rev: release/melodic/rosbag_storage/1.14.10-1
+  folder: ros-melodic-rosbag-storage/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost
+    - bzip2
+    - console_bridge
+    - gpgme
+    - openssl
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-cpp-common
+    - ros-melodic-pluginlib
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-roscpp-traits
+    - ros-melodic-roslz4
+    - ros-melodic-rostest
+    - ros-melodic-rostime
+    - ros-melodic-std-msgs
+  run:
+    - boost
+    - bzip2
+    - console_bridge
+    - gpgme
+    - openssl
+    - python
+    - ros-melodic-cpp-common
+    - ros-melodic-pluginlib
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-roscpp-traits
+    - ros-melodic-roslz4
+    - ros-melodic-rostime

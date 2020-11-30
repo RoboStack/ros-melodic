@@ -1,0 +1,45 @@
+package:
+  name: ros-melodic-kdl-parser-py
+  version: 1.13.1
+source:
+  git_url: https://github.com/ros-gbp/kdl_parser-release.git
+  git_rev: release/melodic/kdl_parser_py/1.13.1-0
+  folder: ros-melodic-kdl-parser-py/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - catkin_pkg
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-orocos-kdl
+    - ros-melodic-python-orocos-kdl
+    - ros-melodic-rostest
+    - ros-melodic-urdf
+    - ros-melodic-urdfdom-py
+  run:
+    - python
+    - ros-melodic-orocos-kdl
+    - ros-melodic-python-orocos-kdl
+    - ros-melodic-urdf
+    - ros-melodic-urdfdom-py

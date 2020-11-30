@@ -1,0 +1,79 @@
+package:
+  name: ros-melodic-ros-comm
+  version: 1.14.10
+source:
+  git_url: https://github.com/ros-gbp/ros_comm-release.git
+  git_rev: release/melodic/ros_comm/1.14.10-1
+  folder: ros-melodic-ros-comm/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-message-filters
+    - ros-melodic-ros
+    - ros-melodic-rosbag
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp
+    - ros-melodic-rosgraph
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-roslaunch
+    - ros-melodic-roslisp
+    - ros-melodic-rosmaster
+    - ros-melodic-rosmsg
+    - ros-melodic-rosnode
+    - ros-melodic-rosout
+    - ros-melodic-rosparam
+    - ros-melodic-rospy
+    - ros-melodic-rosservice
+    - ros-melodic-rostest
+    - ros-melodic-rostopic
+    - ros-melodic-roswtf
+    - ros-melodic-std-srvs
+    - ros-melodic-topic-tools
+    - ros-melodic-xmlrpcpp
+  run:
+    - python
+    - ros-melodic-message-filters
+    - ros-melodic-ros
+    - ros-melodic-rosbag
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp
+    - ros-melodic-rosgraph
+    - ros-melodic-rosgraph-msgs
+    - ros-melodic-roslaunch
+    - ros-melodic-roslisp
+    - ros-melodic-rosmaster
+    - ros-melodic-rosmsg
+    - ros-melodic-rosnode
+    - ros-melodic-rosout
+    - ros-melodic-rosparam
+    - ros-melodic-rospy
+    - ros-melodic-rosservice
+    - ros-melodic-rostest
+    - ros-melodic-rostopic
+    - ros-melodic-roswtf
+    - ros-melodic-std-srvs
+    - ros-melodic-topic-tools
+    - ros-melodic-xmlrpcpp

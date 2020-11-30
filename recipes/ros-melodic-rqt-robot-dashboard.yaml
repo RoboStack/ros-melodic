@@ -1,0 +1,53 @@
+package:
+  name: ros-melodic-rqt-robot-dashboard
+  version: 0.5.7
+source:
+  git_url: https://github.com/ros-gbp/rqt_robot_dashboard-release.git
+  git_rev: release/melodic/rqt_robot_dashboard/0.5.7-0
+  folder: ros-melodic-rqt-robot-dashboard/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-diagnostic-msgs
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-gui
+    - ros-melodic-rospy
+    - ros-melodic-rqt-console
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-rqt-nav-view
+    - ros-melodic-rqt-robot-monitor
+  run:
+    - python
+    - ros-melodic-diagnostic-msgs
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-gui
+    - ros-melodic-rospy
+    - ros-melodic-rqt-console
+    - ros-melodic-rqt-gui
+    - ros-melodic-rqt-gui-py
+    - ros-melodic-rqt-nav-view
+    - ros-melodic-rqt-robot-monitor

@@ -1,0 +1,37 @@
+package:
+  name: ros-melodic-rosclean
+  version: 1.14.9
+source:
+  git_url: https://github.com/ros-gbp/ros-release.git
+  git_rev: release/melodic/rosclean/1.14.9-1
+  folder: ros-melodic-rosclean/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - setuptools
+  run:
+    - python
+    - rospkg

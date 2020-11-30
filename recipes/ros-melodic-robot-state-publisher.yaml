@@ -1,0 +1,58 @@
+package:
+  name: ros-melodic-robot-state-publisher
+  version: 1.14.1
+source:
+  git_url: https://github.com/ros-gbp/robot_state_publisher-release.git
+  git_rev: release/melodic/robot_state_publisher/1.14.1-1
+  folder: ros-melodic-robot-state-publisher/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - eigen
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-kdl-parser
+    - ros-melodic-orocos-kdl
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp
+    - ros-melodic-rostest
+    - ros-melodic-rostime
+    - ros-melodic-sensor-msgs
+    - ros-melodic-tf
+    - ros-melodic-tf2-kdl
+    - ros-melodic-tf2-ros
+    - urdfdom_headers 1.0.4
+  run:
+    - eigen
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-kdl-parser
+    - ros-melodic-orocos-kdl
+    - ros-melodic-rosconsole
+    - ros-melodic-roscpp
+    - ros-melodic-rostime
+    - ros-melodic-sensor-msgs
+    - ros-melodic-tf
+    - ros-melodic-tf2-kdl
+    - ros-melodic-tf2-ros

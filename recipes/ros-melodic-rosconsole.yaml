@@ -1,0 +1,48 @@
+package:
+  name: ros-melodic-rosconsole
+  version: 1.13.18
+source:
+  git_url: https://github.com/ros-gbp/rosconsole-release.git
+  git_rev: release/melodic/rosconsole/1.13.18-1
+  folder: ros-melodic-rosconsole/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - apr
+    - boost-cpp
+    - log4cxx
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-cpp-common
+    - ros-melodic-rosbuild
+    - ros-melodic-rostime
+    - ros-melodic-rosunit
+  run:
+    - apr
+    - boost-cpp
+    - log4cxx
+    - python
+    - ros-melodic-cpp-common
+    - ros-melodic-rosbuild
+    - ros-melodic-rostime

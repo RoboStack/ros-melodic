@@ -1,0 +1,39 @@
+package:
+  name: ros-melodic-kdl-conversions
+  version: 1.12.1
+source:
+  git_url: https://github.com/ros-gbp/geometry-release.git
+  git_rev: release/melodic/kdl_conversions/1.12.1-1
+  folder: ros-melodic-kdl-conversions/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-geometry-msgs
+    - ros-melodic-orocos-kdl
+  run:
+    - python
+    - ros-melodic-geometry-msgs
+    - ros-melodic-orocos-kdl

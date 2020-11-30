@@ -1,0 +1,49 @@
+package:
+  name: ros-melodic-dynamic-reconfigure
+  version: 1.6.3
+source:
+  git_url: https://github.com/ros-gbp/dynamic_reconfigure-release.git
+  git_rev: release/melodic/dynamic_reconfigure/1.6.3-1
+  folder: ros-melodic-dynamic-reconfigure/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - boost
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-cpp-common
+    - ros-melodic-message-generation
+    - ros-melodic-roscpp
+    - ros-melodic-roscpp-serialization
+    - ros-melodic-rostest
+    - ros-melodic-std-msgs
+  run:
+    - boost
+    - python
+    - ros-melodic-message-runtime
+    - ros-melodic-roscpp
+    - ros-melodic-roslib
+    - ros-melodic-rospy
+    - ros-melodic-rosservice
+    - ros-melodic-std-msgs

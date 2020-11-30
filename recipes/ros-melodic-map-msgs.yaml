@@ -1,0 +1,44 @@
+package:
+  name: ros-melodic-map-msgs
+  version: 1.14.1
+source:
+  git_url: https://github.com/ros-gbp/navigation_msgs-release.git
+  git_rev: release/melodic/map_msgs/1.14.1-1
+  folder: ros-melodic-map-msgs/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-message-generation
+    - ros-melodic-message-runtime
+    - ros-melodic-nav-msgs
+    - ros-melodic-sensor-msgs
+    - ros-melodic-std-msgs
+  run:
+    - python
+    - ros-melodic-message-runtime
+    - ros-melodic-nav-msgs
+    - ros-melodic-sensor-msgs
+    - ros-melodic-std-msgs

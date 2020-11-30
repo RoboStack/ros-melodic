@@ -1,0 +1,38 @@
+package:
+  name: ros-melodic-genmsg
+  version: 0.5.16
+source:
+  git_url: https://github.com/ros-gbp/genmsg-release.git
+  git_rev: release/melodic/genmsg/0.5.16-1
+  folder: ros-melodic-genmsg/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - setuptools
+  run:
+    - empy
+    - python
+    - ros-melodic-catkin

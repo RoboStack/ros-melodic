@@ -1,0 +1,40 @@
+package:
+  name: ros-melodic-rqt-gui
+  version: 0.5.2
+source:
+  git_url: https://github.com/ros-gbp/rqt-release.git
+  git_rev: release/melodic/rqt_gui/0.5.2-1
+  folder: ros-melodic-rqt-gui/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-qt-gui
+  run:
+    - python
+    - ros-melodic-python-qt-binding
+    - ros-melodic-qt-gui
+    - ros-melodic-rospy
+    - rospkg

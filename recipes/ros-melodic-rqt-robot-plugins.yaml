@@ -1,0 +1,53 @@
+package:
+  name: ros-melodic-rqt-robot-plugins
+  version: 0.5.7
+source:
+  git_url: https://github.com/ros-gbp/rqt_robot_plugins-release.git
+  git_rev: release/melodic/rqt_robot_plugins/0.5.7-0
+  folder: ros-melodic-rqt-robot-plugins/src/work
+
+build:
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
+  number: 2
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
+    - ninja
+    - sel(unix): make
+    - cmake
+  host:
+    - python
+    - ros-melodic-catkin
+    - ros-melodic-rqt-moveit
+    - ros-melodic-rqt-nav-view
+    - ros-melodic-rqt-pose-view
+    - ros-melodic-rqt-robot-dashboard
+    - ros-melodic-rqt-robot-monitor
+    - ros-melodic-rqt-robot-steering
+    - ros-melodic-rqt-runtime-monitor
+    - ros-melodic-rqt-rviz
+    - ros-melodic-rqt-tf-tree
+  run:
+    - python
+    - ros-melodic-rqt-moveit
+    - ros-melodic-rqt-nav-view
+    - ros-melodic-rqt-pose-view
+    - ros-melodic-rqt-robot-dashboard
+    - ros-melodic-rqt-robot-monitor
+    - ros-melodic-rqt-robot-steering
+    - ros-melodic-rqt-runtime-monitor
+    - ros-melodic-rqt-rviz
+    - ros-melodic-rqt-tf-tree
