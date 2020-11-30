@@ -1,0 +1,6 @@
+pool:
+  vmImage: vs2017-win2016
+trigger:
+- buildbranch_win
+pr: none
+stages: []
